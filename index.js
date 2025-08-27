@@ -13,7 +13,8 @@ const port = process.env.PORT || 5000;
 // Middleware setup
 const corsOptions = {
   origin: [
-    'http://localhost:5173', 
+    'http://localhost:5173',
+    'https://greenplantproject-cae48.web.app' 
   ],
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -135,7 +136,7 @@ let usercollection, plantscollection, ordercollection, reviewcollection, contact
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
 
     usercollection = client.db('greenplantnet').collection('user');
     plantscollection = client.db('greenplantnet').collection('plants');
